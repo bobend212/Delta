@@ -7,14 +7,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class App extends JFrame implements ActionListener {
 
-    private JTextField tA, tB, tC, result, r1t, r2t;
-    private JLabel lA, lB, lC, title, delta, r1, r2;
-    private JPanel panel;
+    private JTextField tA, tB, tC, result;
+    private JLabel lA, lB, lC, title, delta;
     private JButton compile, clean;
 
     public App() {
@@ -58,7 +56,7 @@ public class App extends JFrame implements ActionListener {
         compile.setFont(new Font("Arial", Font.ITALIC, 25));
         compile.addActionListener(this);
         add(compile);
-        
+
         clean = new JButton("Clear");
         clean.setBounds(50, 100, 150, 25);
         clean.setFont(new Font("Arial", Font.ITALIC, 25));
@@ -68,6 +66,8 @@ public class App extends JFrame implements ActionListener {
         result = new JTextField();
         result.setBounds(80, 147, 400, 25);
         result.setBackground(Color.DARK_GRAY);
+        result.setForeground(Color.YELLOW);
+        result.setFont(new Font("Arial", Font.BOLD, 12));
         add(result);
 
         delta = new JLabel("Delta =");
@@ -82,7 +82,6 @@ public class App extends JFrame implements ActionListener {
         t.setVisible(true);
         t.setDefaultCloseOperation(EXIT_ON_CLOSE);
         t.setSize(500, 225);
-
     }
 
     @Override
@@ -90,28 +89,28 @@ public class App extends JFrame implements ActionListener {
 
         Object zrodlo = e.getSource();                // tutaj chyba tworzy sie wybor ktory button mozna uzyc w if... see below getSource()!!
 
-        if (compile == zrodlo) {
-            int a = Integer.parseInt(tA.getText());
-            int b = Integer.parseInt(tB.getText());
-            int c = Integer.parseInt(tC.getText());
+        try {
 
-            Oblicz a1 = new Oblicz(a, b, c);
-            String r = a1.obliczanie();
-            
-            result.setForeground(Color.YELLOW);
-            result.setFont(new Font("Arial", Font.BOLD, 12));
-            result.setText(r);
+            if (compile == zrodlo) {
+                int a = Integer.parseInt(tA.getText());
+                int b = Integer.parseInt(tB.getText());
+                int c = Integer.parseInt(tC.getText());
+
+                Oblicz a1 = new Oblicz(a, b, c);
+                String r = a1.obliczanie();
+
+                result.setText(r);
+
+            }
+        } catch (IllegalArgumentException ex) {
+            result.setText("Nieprawidlowe dane!");
         }
-        else if (clean == zrodlo) {
+
+        if (clean == zrodlo) {
             result.setText("");
             tA.setText("");
             tB.setText("");
             tC.setText("");
         }
-
     }
-
 }
-
-
-//dodac ify to delty

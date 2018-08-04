@@ -11,3 +11,5 @@ build.xml
 nbproject/private/private.xml
 nbproject/private/private.properties
 build/classes/app/Oblicz.class
+build/classes/.netbeans_automatic_build
+build/classes/.netbeans_update_resources
