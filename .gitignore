@@ -1,0 +1,13 @@
+nbproject/project.xml
+nbproject/project.properties
+nbproject/genfiles.properties
+nbproject/build-impl.xml
+manifest.mf
+dist/README.TXT
+dist/App.jar
+build/classes/app/App.class
+build/built-jar.properties
+build.xml
+nbproject/private/private.xml
+nbproject/private/private.properties
+build/classes/app/Oblicz.class
