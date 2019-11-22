@@ -1,12 +1,10 @@
 # Delta
 
-This application is one of my first written in Java by Swing.
+This application is one of my first written in Java Swing.
 
-Application calculate delta and zero places.
+Application calculates delta and zero places.
 
 
-Features:
-- change language on English
+ToDo:
+- change language to English
 - improve classes and methods
-
-MK
