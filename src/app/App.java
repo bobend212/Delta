@@ -87,7 +87,7 @@ public class App extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        Object zrodlo = e.getSource();                // tutaj chyba tworzy sie wybor ktory button mozna uzyc w if... see below getSource()!!
+        Object zrodlo = e.getSource();              
 
         try {
 
